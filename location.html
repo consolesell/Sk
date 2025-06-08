@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location Finder - Excellence Travel Solutions Africa</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="location.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Find Your Location</h1>
+      <button id="getLocationBtn">Get My Location</button>
+      <div id="loading" class="hidden">Getting your location...</div>
+      <div id="locationInfo" class="hidden">
+        <h2>Your Location:</h2>
+        <p><strong>Latitude:</strong> <span id="latitude"></span></p>
+        <p><strong>Longitude:</strong> <span id="longitude"></span></p>
+        <p><strong>Accuracy:</strong> <span id="accuracy"></span> meters</p>
+        <div id="mapLink"></div>
+      </div>
+      <div id="error" class="hidden error"></div>
+      <div id="prompt" class="hidden prompt">
+        <p>Location access is needed for your booking.</p>
+        <button id="retryLocation">Get My Location</button>
+        <button id="proceed">Proceed</button>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js"></script>
+    <script type="module" src="bookings.js"></script>
+    <script type="module" src="location.js"></script>
+  </body>
+</html>

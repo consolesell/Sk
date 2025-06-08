@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Open Sans", sans-serif;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+.header {
+  background-color: #2d5016;
+  color: #fafafa;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header.sticky {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav a {
+  color: #fafafa;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  color: #ff8c42;
+}
+
+.dashboard {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.map-container {
+  margin-bottom: 2rem;
+}
+
+#map {
+  height: 300px;
+  border-radius: 10px;
+}
+
+.bookings-list {
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.fab {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #4a90e2;
+  color: #fafafa;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.fab:hover {
+  background: #357abd;
+}
+
+.fab-menu {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.fab-menu button {
+  background: #2d5016;
+  color: #fafafa;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fab-menu button:hover {
+  background: #ff8c42;
+}
+
+.contact-form {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #ffffff;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form input {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #333333;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background: #4a90e2;
+  color: #fafafa;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background: #357abd;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    padding: 1rem;
+  }
+
+  .map-container {
+    height: 200px;
+  }
+}
