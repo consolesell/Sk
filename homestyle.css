@@ -1,0 +1,182 @@
+/* Reset styles for consistency */
+* {
+  box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: linear-gradient(to bottom, #E0BBE4, #957DAD);
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+
+/* Header styles */
+.header {
+  background: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav li {
+  margin-left: 20px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+.nav a:hover {
+  color: #FF6B6B;
+}
+
+/* Hero section styles */
+.hero {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+/* Services section styles */
+.services {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  font-size: 2em;
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  height: 400px; /* Adjust based on card height */
+}
+
+.carousel-item {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s ease;
+}
+
+/* Image slider within service cards */
+.image-slider {
+  position: relative;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.image-slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.image-slider img.active {
+  opacity: 1;
+}
+
+/* Service card content */
+.carousel-item h3 {
+  font-size: 1.5em;
+  color: #333;
+  margin: 10px 0;
+}
+
+.carousel-item p {
+  font-size: 1em;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+button, .book-now, .cta {
+  background: linear-gradient(to right, #FF6B6B, #FF8E8E);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  width: 100%;
+  max-width: 200px;
+}
+
+button:hover, .book-now:hover, .cta:hover {
+  filter: brightness(1.1);
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: #fff;
+}
+
+footer p {
+  margin: 0;
+}
