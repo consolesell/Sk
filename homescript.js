@@ -1,75 +1,65 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
 import { getAuth, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
-// Firebase configuration (replace with your own config)
 const firebaseConfig = {
-    apiKey: "your-api-key",
-    authDomain: "your-auth-domain",
-    projectId: "your-project-id",
-    storageBucket: "your-storage-bucket",
-    messagingSenderId: "your-messaging-sender-id",
-    appId: "your-app-id"
+  apiKey: "AIzaSyBx-cS3l5_49Q2-xs5hqe5BKs79Laz4B0o",
+  authDomain: "leotu-5c2b5.firebaseapp.com",
+  databaseURL: "https://leotu-5c2b5-default-rtdb.firebaseio.com",
+  projectId: "leotu-5c2b5",
+  storageBucket: "leotu-5c2b5.firebasestorage.app",
+  messagingSenderId: "694359717732",
+  appId: "1:694359717732:web:1e79cc09e8e991f7322c71"
 };
-
-// Initialize Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js";
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-// Check authentication state
-onAuthStateChanged(auth, (user) => {
-    if (!user) {
-        window.location.href = "index.html";
-    }
-});
-
-// Logout functionality
-document.getElementById("logout").addEventListener("click", (e) => {
-    e.preventDefault();
-    signOut(auth).then(() => {
-        window.location.href = "index.html";
-    });
-});
-
 // Sticky header
 window.addEventListener("scroll", () => {
-    const header = document.querySelector(".header");
-    header.classList.toggle("sticky", window.scrollY > 0);
+  const header = document.querySelector(".header");
+  header.classList.toggle("sticky", window.scrollY > 0);
 });
 
 // Carousel functionality
-const carouselItems = document.querySelectorAll(".carousel-item");
-let currentSlide = 0;
+const carousel = document.querySelector(".carousel");
+const items = document.querySelectorAll(".carousel-item");
+let currentIndex = 0;
 
 function showSlide(index) {
-    carouselItems.forEach((item, i) => {
-        item.style.transform = `translateX(${(i - index) * 100}%)`;
-    });
+  items.forEach((item, i) => {
+    item.style.transform = `translateX(${(i - index) * 100}%)`;
+  });
 }
 
-function nextSlide() {
-    currentSlide = (currentSlide + 1) % carouselItems.length;
-    showSlide(currentSlide);
-}
+setInterval(() => {
+  currentIndex = (currentIndex + 1) % items.length;
+  showSlide(currentIndex);
+}, 5000);
 
-// Image slider functionality for each carousel item
-carouselItems.forEach((item) => {
-    const images = item.querySelectorAll(".image-slider img");
-    let currentImage = 0;
-
-    if (images.length > 0) {
-        images[0].classList.add("active");
-
-        setInterval(() => {
-            images[currentImage].classList.remove("active");
-            currentImage = (currentImage + 1) % images.length;
-            images[currentImage].classList.add("active");
-        }, 3000); // Change image every 3 seconds
-    }
+// Book now buttons
+document.querySelectorAll(".book-now, .cta").forEach((btn) => {
+  btn.addEventListener("click", (e) => {
+    const service = e.target.closest(".carousel-item")?.dataset.service || "general";
+    localStorage.setItem("selectedService", service);
+    window.location.href = "location.html";
+  });
 });
 
-// Auto-slide carousel
-showSlide(currentSlide);
-setInterval(nextSlide, 5000); // Change slide every 5 seconds
+// Logout
+document.getElementById("logout").addEventListener("click", async (e) => {
+  e.preventDefault();
+  try {
+    await signOut(auth);
+    window.location.href = "index.html";
+  } catch (error) {
+    console.error("Logout error:", error.message);
+    alert("Logout failed: " + error.message);
+  }
+});
+
+// Redirect unauthenticated users
+auth.onAuthStateChanged((user) => {
+  if (!user) {
+    window.location.href = "index.html";
+  }
+});

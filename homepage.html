@@ -1,65 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage</title>
-    <link rel="stylesheet" href="homestyle.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - Excellence Travel Solutions Africa</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="header">
-        <div class="logo">
-            <img src="public/images_logos_and_svgs/logo.png" alt="Logo">
-        </div>
-        <nav class="nav">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="location.html">Locations</a></li>
-                <li><a href="#" id="logout">Logout</a></li>
-            </ul>
-        </nav>
+      <div class="logo">
+        <img src="public/images_logos_and_svgs/logos/primary-logo.svg" alt="Excellence Travel Solutions Africa" />
+      </div>
+      <nav class="nav">
+        <ul>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="bookings.html">My Bookings</a></li>
+          <li><a href="#" id="logout">Logout</a></li>
+        </ul>
+      </nav>
     </header>
-
     <main>
-        <section class="hero">
-            <h1>Welcome to Our Service</h1>
-            <p>Experience the best with us.</p>
-            <button class="cta">Get Started</button>
-        </section>
-
-        <section class="services">
-            <h2>Our Services</h2>
-            <div class="carousel">
-                <div class="carousel-item">
-                    <div class="image-slider">
-                        <img src="public/images_logos_and_svgs/services/airport-transfers/img1.jpg" alt="Airport Transfer 1">
-                        <img src="public/images_logos_and_svgs/services/airport-transfers/img2.jpg" alt="Airport Transfer 2">
-                    </div>
-                    <h3>Airport Transfers</h3>
-                    <p>Reliable and comfortable airport transportation.</p>
-                    <button class="book-now">Book Now</button>
-                </div>
-                <div class="carousel-item">
-                    <div class="image-slider">
-                        <img src="public/images_logos_and_svgs/services/city-tours/img1.jpg" alt="City Tour 1">
-                        <img src="public/images_logos_and_svgs/services/city-tours/img2.jpg" alt="City Tour 2">
-                    </div>
-                    <h3>City Tours</h3>
-                    <p>Explore the city with our guided tours.</p>
-                    <button class="book-now">Book Now</button>
-                </div>
-            </div>
-        </section>
+      <section class="hero">
+        <h1>Explore Africa with Excellence</h1>
+        <p>Discover Kenya’s wonders with seamless travel solutions.</p>
+        <button class="cta">Book Now</button>
+      </section>
+      <section class="services">
+        <h2>Our Services</h2>
+        <div class="carousel">
+          <div class="carousel-item" data-service="airport-transfers">
+            <h3>Airport & SGR Transfers</h3>
+            <img src="public/images_logos_and_svgs/services/airport-transfers/img1.jpg" alt="Airport Transfer" />
+            <p>Reliable transportation to and from airports and SGR stations.</p>
+            <button class="book-now">Book Now</button>
+          </div>
+          <div class="carousel-item" data-service="hotel-transfers">
+            <h3>Hotel Transfers</h3>
+            <img src="public/images_logos_and_svgs/services/hotel-transfers/img1.jpg" alt="Hotel Transfer" />
+            <p>Comfortable shuttles to your accommodation.</p>
+            <button class="book-now">Book Now</button>
+          </div>
+          <div class="carousel-item" data-service="cultural-tours">
+            <h3>Cultural Tours</h3>
+            <img src="public/images_logos_and_svgs/services/cultural-tours/img1.jpg" alt="Cultural Tour" />
+            <p>Explore Mombasa Old Town and Fort Jesus.</p>
+            <button class="book-now">Book Now</button>
+          </div>
+          <!-- Add more carousel items for other services -->
+        </div>
+      </section>
     </main>
-
     <footer>
-        <p>&copy; 2023 Your Company. All rights reserved.</p>
+      <p>&copy; 2025 Excellence Travel Solutions Africa. All rights reserved.</p>
     </footer>
-
-    <!-- Firebase SDK -->
     <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.14.1/firebase-auth.js"></script>
-    <!-- Local JavaScript -->
     <script type="module" src="homescript.js"></script>
-</body>
+  </body>
 </html>
